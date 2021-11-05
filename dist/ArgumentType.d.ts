@@ -1,0 +1,20 @@
+export declare enum ArgumentType {
+    NONE = 0,
+    PREDICATE = 1,
+    ARG0 = 2,
+    ARG1 = 3,
+    ARG2 = 4,
+    ARG3 = 5,
+    ARG4 = 6,
+    ARG5 = 7,
+    ARGMNONE = 8,
+    ARGMEXT = 9,
+    ARGMLOC = 10,
+    ARGMDIS = 11,
+    ARGMADV = 12,
+    ARGMCAU = 13,
+    ARGMTMP = 14,
+    ARGMPNC = 15,
+    ARGMMNR = 16,
+    ARGMDIR = 17
+}

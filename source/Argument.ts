@@ -11,7 +11,7 @@ export class Argument {
      * @param argument  Argument string containing the argumentType and id
      * @param id  Id of the argument
      */
-    constructor(argument: string, id: string) {
+    constructor(argument: string, id?: string) {
         if (id == undefined){
             if (argument.includes("$")){
                 this.argumentType = argument.substring(0, argument.indexOf("$"));

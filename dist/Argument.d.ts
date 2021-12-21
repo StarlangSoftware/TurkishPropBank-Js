@@ -9,7 +9,7 @@ export declare class Argument {
      * @param argument  Argument string containing the argumentType and id
      * @param id  Id of the argument
      */
-    constructor(argument: string, id: string);
+    constructor(argument: string, id?: string);
     /**
      * Accessor for argumentType.
      *

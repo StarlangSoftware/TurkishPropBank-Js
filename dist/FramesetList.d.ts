@@ -3,7 +3,7 @@ export declare class FramesetList {
     private frames;
     /**
      * A constructor of {@link FramesetList} class which reads all frameset files inside the files.txt file. For each
-     * filename inside that file, the constructor creates a Frameset and puts in inside the frames {@link ArrayList}.
+     * filename inside that file, the constructor creates a Frameset and puts in inside the frames {@link Array}.
      */
     constructor();
     /**

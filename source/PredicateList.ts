@@ -1,5 +1,4 @@
 import {Predicate} from "./Predicate";
-import * as fs from "fs";
 import {XmlDocument} from "nlptoolkit-xmlparser/dist/XmlDocument";
 import {RoleSet} from "./RoleSet";
 import {Role} from "./Role";
@@ -9,12 +8,11 @@ export class PredicateList {
     private list: Map<string, Predicate> = new Map<string, Predicate>()
 
     constructor() {
-        let data = fs.readFileSync("files-english.txt", 'utf8')
-        let lines = data.split("\n")
-        for (let line of lines){
-            let xmlDocument = new XmlDocument("Frames/" + line)
-            xmlDocument.parse()
-            let frameSetNode = xmlDocument.getFirstChild()
+        let xmlDocument = new XmlDocument("english-propbank.xml")
+        xmlDocument.parse()
+        let framesNode = xmlDocument.getFirstChild()
+        let frameSetNode = framesNode.getFirstChild()
+        while (frameSetNode != undefined){
             let predicateNode = frameSetNode.getFirstChild()
             while (predicateNode != undefined){
                 if (predicateNode.hasAttributes()){
@@ -47,6 +45,7 @@ export class PredicateList {
                 }
                 predicateNode = predicateNode.getNextSibling()
             }
+            frameSetNode = frameSetNode.getNextSibling()
         }
     }
 

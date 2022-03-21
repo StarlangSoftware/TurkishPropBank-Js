@@ -4,7 +4,7 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./Frameset", "nlptoolkit-xmlparser/dist/XmlDocument", "fs"], factory);
+        define(["require", "exports", "./Frameset", "nlptoolkit-xmlparser/dist/XmlDocument"], factory);
     }
 })(function (require, exports) {
     "use strict";
@@ -12,19 +12,20 @@
     exports.FramesetList = void 0;
     const Frameset_1 = require("./Frameset");
     const XmlDocument_1 = require("nlptoolkit-xmlparser/dist/XmlDocument");
-    const fs = require("fs");
     class FramesetList {
         /**
          * A constructor of {@link FramesetList} class which reads all frameset files inside the files.txt file. For each
-         * filename inside that file, the constructor creates a Frameset and puts in inside the frames {@link ArrayList}.
+         * filename inside that file, the constructor creates a Frameset and puts in inside the frames {@link Array}.
          */
         constructor() {
             this.frames = [];
-            let data = fs.readFileSync("files-turkish.txt", 'utf8');
-            let lines = data.split("\n");
-            for (let line of lines) {
-                let xmlDocument = new XmlDocument_1.XmlDocument("Turkish/" + line);
-                this.frames.push(new Frameset_1.Frameset(xmlDocument));
+            let xmlDocument = new XmlDocument_1.XmlDocument("turkish-propbank.xml");
+            xmlDocument.parse();
+            let framesNode = xmlDocument.getFirstChild();
+            let frameSetNode = framesNode.getFirstChild();
+            while (frameSetNode != undefined) {
+                this.frames.push(new Frameset_1.Frameset(frameSetNode));
+                frameSetNode = frameSetNode.getNextSibling();
             }
         }
         /**

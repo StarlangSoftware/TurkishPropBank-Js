@@ -4,26 +4,24 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./FramesetArgument", "nlptoolkit-xmlparser/dist/XmlDocument", "./ArgumentTypeStatic"], factory);
+        define(["require", "exports", "./FramesetArgument", "./ArgumentTypeStatic", "nlptoolkit-xmlparser/dist/XmlElement"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.Frameset = void 0;
     const FramesetArgument_1 = require("./FramesetArgument");
-    const XmlDocument_1 = require("nlptoolkit-xmlparser/dist/XmlDocument");
     const ArgumentTypeStatic_1 = require("./ArgumentTypeStatic");
+    const XmlElement_1 = require("nlptoolkit-xmlparser/dist/XmlElement");
     class Frameset {
         /**
          * Another constructor of {@link Frameset} class which takes XmlDocument as input and reads the frameset
          *
-         * @param doc  inputStream to read frameset
+         * @param framesetNode  inputStream to read frameset
          */
-        constructor(doc) {
+        constructor(framesetNode) {
             this.framesetArguments = [];
-            if (doc instanceof XmlDocument_1.XmlDocument) {
-                doc.parse();
-                let framesetNode = doc.getFirstChild();
+            if (framesetNode instanceof XmlElement_1.XmlElement) {
                 this.id = framesetNode.getAttributeValue("id");
                 let argument = framesetNode.getFirstChild();
                 while (argument != undefined) {
@@ -33,7 +31,7 @@
                 }
             }
             else {
-                this.id = doc;
+                this.id = framesetNode;
             }
         }
         /**

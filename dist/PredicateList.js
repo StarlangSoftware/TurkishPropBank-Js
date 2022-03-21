@@ -4,26 +4,24 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./Predicate", "fs", "nlptoolkit-xmlparser/dist/XmlDocument", "./RoleSet", "./Role"], factory);
+        define(["require", "exports", "./Predicate", "nlptoolkit-xmlparser/dist/XmlDocument", "./RoleSet", "./Role"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.PredicateList = void 0;
     const Predicate_1 = require("./Predicate");
-    const fs = require("fs");
     const XmlDocument_1 = require("nlptoolkit-xmlparser/dist/XmlDocument");
     const RoleSet_1 = require("./RoleSet");
     const Role_1 = require("./Role");
     class PredicateList {
         constructor() {
             this.list = new Map();
-            let data = fs.readFileSync("files-english.txt", 'utf8');
-            let lines = data.split("\n");
-            for (let line of lines) {
-                let xmlDocument = new XmlDocument_1.XmlDocument("Frames/" + line);
-                xmlDocument.parse();
-                let frameSetNode = xmlDocument.getFirstChild();
+            let xmlDocument = new XmlDocument_1.XmlDocument("english-propbank.xml");
+            xmlDocument.parse();
+            let framesNode = xmlDocument.getFirstChild();
+            let frameSetNode = framesNode.getFirstChild();
+            while (frameSetNode != undefined) {
                 let predicateNode = frameSetNode.getFirstChild();
                 while (predicateNode != undefined) {
                     if (predicateNode.hasAttributes()) {
@@ -56,6 +54,7 @@
                     }
                     predicateNode = predicateNode.getNextSibling();
                 }
+                frameSetNode = frameSetNode.getNextSibling();
             }
         }
         /**

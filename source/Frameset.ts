@@ -2,6 +2,7 @@ import {FramesetArgument} from "./FramesetArgument";
 import {XmlDocument} from "nlptoolkit-xmlparser/dist/XmlDocument";
 import {ArgumentType} from "./ArgumentType";
 import {ArgumentTypeStatic} from "./ArgumentTypeStatic";
+import {XmlElement} from "nlptoolkit-xmlparser/dist/XmlElement";
 
 export class Frameset {
 
@@ -11,12 +12,10 @@ export class Frameset {
     /**
      * Another constructor of {@link Frameset} class which takes XmlDocument as input and reads the frameset
      *
-     * @param doc  inputStream to read frameset
+     * @param framesetNode  inputStream to read frameset
      */
-    constructor(doc: any) {
-        if (doc instanceof XmlDocument){
-            doc.parse()
-            let framesetNode = doc.getFirstChild()
+    constructor(framesetNode: any) {
+        if (framesetNode instanceof XmlElement){
             this.id = framesetNode.getAttributeValue("id")
             let argument = framesetNode.getFirstChild()
             while (argument != undefined){
@@ -26,7 +25,7 @@ export class Frameset {
                 argument = argument.getNextSibling()
             }
         } else {
-            this.id = doc
+            this.id = framesetNode
         }
     }
 

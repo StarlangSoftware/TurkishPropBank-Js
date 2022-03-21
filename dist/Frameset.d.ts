@@ -6,9 +6,9 @@ export declare class Frameset {
     /**
      * Another constructor of {@link Frameset} class which takes XmlDocument as input and reads the frameset
      *
-     * @param doc  inputStream to read frameset
+     * @param framesetNode  inputStream to read frameset
      */
-    constructor(doc: any);
+    constructor(framesetNode: any);
     /**
      * containsArgument method which checks if there is an {@link Argument} of the given argumentType.
      *

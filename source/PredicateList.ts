@@ -7,6 +7,10 @@ export class PredicateList {
 
     private list: Map<string, Predicate> = new Map<string, Predicate>()
 
+    /**
+     * A constructor of {@link PredicateList} class which reads all predicate files inside the 'Frames' folder. For each
+     * file inside that folder, the constructor creates a Predicate and puts in inside the list Map.
+     */
     constructor() {
         let xmlDocument = new XmlDocument("english-propbank.xml")
         xmlDocument.parse()

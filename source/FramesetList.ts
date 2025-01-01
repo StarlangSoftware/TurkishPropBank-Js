@@ -1,6 +1,5 @@
 import {Frameset} from "./Frameset";
 import {XmlDocument} from "nlptoolkit-xmlparser/dist/XmlDocument";
-import * as fs from "fs";
 
 export class FramesetList {
 

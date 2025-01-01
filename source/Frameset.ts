@@ -1,5 +1,4 @@
 import {FramesetArgument} from "./FramesetArgument";
-import {XmlDocument} from "nlptoolkit-xmlparser/dist/XmlDocument";
 import {ArgumentType} from "./ArgumentType";
 import {ArgumentTypeStatic} from "./ArgumentTypeStatic";
 import {XmlElement} from "nlptoolkit-xmlparser/dist/XmlElement";

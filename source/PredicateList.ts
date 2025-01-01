@@ -68,7 +68,7 @@ export class PredicateList {
      * @param lemma  Lemma of the searched predicate
      * @return {@link Predicate} which has the given lemma.
      */
-    getPredicate(lemma: string){
+    getPredicate(lemma: string): Predicate{
         return this.list.get(lemma)
     }
 

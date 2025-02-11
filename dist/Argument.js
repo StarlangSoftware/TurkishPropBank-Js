@@ -23,7 +23,7 @@
             if (id == undefined) {
                 if (argument.includes("$")) {
                     this.argumentType = argument.substring(0, argument.indexOf("$"));
-                    this.id = argument.substring(argument.indexOf("$") + 1);
+                    this._id = argument.substring(argument.indexOf("$") + 1);
                 }
                 else {
                     this.argumentType = "NONE";
@@ -31,7 +31,7 @@
             }
             else {
                 this.argumentType = argument;
-                this.id = id;
+                this._id = id;
             }
         }
         /**
@@ -45,10 +45,10 @@
         /**
          * Accessor for id.
          *
-         * @return id.
+         * @return _id.
          */
         getId() {
-            return this.id;
+            return this._id;
         }
         /**
          * toString converts an {@link Argument} to a string. If the argumentType is "NONE" returns only "NONE", otherwise
@@ -61,8 +61,15 @@
                 return this.argumentType;
             }
             else {
-                return this.argumentType + "$" + this.id;
+                return this.argumentType + "$" + this._id;
             }
+        }
+        /**
+         * Setter for the id
+         * @param id New id of the argument
+         */
+        setId(id) {
+            this._id = id;
         }
     }
     exports.Argument = Argument;

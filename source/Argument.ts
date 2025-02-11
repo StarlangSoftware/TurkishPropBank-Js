@@ -1,7 +1,7 @@
 export class Argument {
 
     private readonly argumentType: string
-    private readonly id: string
+    private _id: string
 
     /**
      * A constructor of {@link Argument} class which takes argument string which is in the form of argumentType$id
@@ -15,13 +15,13 @@ export class Argument {
         if (id == undefined){
             if (argument.includes("$")){
                 this.argumentType = argument.substring(0, argument.indexOf("$"));
-                this.id = argument.substring(argument.indexOf("$") + 1);
+                this._id = argument.substring(argument.indexOf("$") + 1);
             } else {
                 this.argumentType = "NONE";
             }
         } else {
             this.argumentType = argument
-            this.id = id
+            this._id = id
         }
     }
 
@@ -37,10 +37,10 @@ export class Argument {
     /**
      * Accessor for id.
      *
-     * @return id.
+     * @return _id.
      */
     getId(): string{
-        return this.id
+        return this._id
     }
 
     /**
@@ -53,8 +53,16 @@ export class Argument {
         if (this.argumentType == "NONE"){
             return this.argumentType;
         } else {
-            return this.argumentType + "$" + this.id;
+            return this.argumentType + "$" + this._id;
         }
+    }
+
+    /**
+     * Setter for the id
+     * @param id New id of the argument
+     */
+    setId(id: string) {
+        this._id = id;
     }
 
 }

@@ -1,6 +1,10 @@
 import { Predicate } from "./Predicate";
 export declare class PredicateList {
     private list;
+    /**
+     * A constructor of {@link PredicateList} class which reads all predicate files inside the 'Frames' folder. For each
+     * file inside that folder, the constructor creates a Predicate and puts in inside the list Map.
+     */
     constructor();
     /**
      * The size method returns the number of predicates inside the list.

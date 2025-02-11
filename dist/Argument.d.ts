@@ -1,6 +1,6 @@
 export declare class Argument {
     private readonly argumentType;
-    private readonly id;
+    private _id;
     /**
      * A constructor of {@link Argument} class which takes argument string which is in the form of argumentType$id
      * and parses this string into argumentType and id. If the argument string does not contain '$' then the
@@ -19,7 +19,7 @@ export declare class Argument {
     /**
      * Accessor for id.
      *
-     * @return id.
+     * @return _id.
      */
     getId(): string;
     /**
@@ -29,4 +29,9 @@ export declare class Argument {
      * @return string form of argument
      */
     toString(): string;
+    /**
+     * Setter for the id
+     * @param id New id of the argument
+     */
+    setId(id: string): void;
 }

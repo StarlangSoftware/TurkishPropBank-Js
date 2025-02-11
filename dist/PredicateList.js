@@ -15,6 +15,10 @@
     const RoleSet_1 = require("./RoleSet");
     const Role_1 = require("./Role");
     class PredicateList {
+        /**
+         * A constructor of {@link PredicateList} class which reads all predicate files inside the 'Frames' folder. For each
+         * file inside that folder, the constructor creates a Predicate and puts in inside the list Map.
+         */
         constructor() {
             this.list = new Map();
             let xmlDocument = new XmlDocument_1.XmlDocument("english-propbank.xml");

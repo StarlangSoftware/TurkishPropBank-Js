@@ -3,6 +3,7 @@ export class FramesetArgument {
     argumentType: string
     _function: string
     definition: string
+    grammaticalCase: string
 
     /**
      * A constructor of {@link FramesetArgument} class which takes argumentType and definition as input and initializes corresponding attributes
@@ -11,10 +12,11 @@ export class FramesetArgument {
      * @param definition  Definition of the frameset argument
      * @param _function  Function of the frameset argument
      */
-    constructor(argumentType: string, definition: string, _function: string) {
+    constructor(argumentType: string, definition: string, _function: string, grammaticalCase: string) {
         this.argumentType = argumentType
         this.definition = definition
         this._function = _function
+        this.grammaticalCase = grammaticalCase
     }
 
     /**
@@ -45,6 +47,15 @@ export class FramesetArgument {
     }
 
     /**
+     * Accessor for grammatical case.
+     *
+     * @return grammatical case.
+     */
+    getGrammaticalCase(): string{
+        return this.grammaticalCase
+    }
+
+    /**
      * Mutator for definition.
      *
      * @param definition to set.
@@ -60,6 +71,15 @@ export class FramesetArgument {
      */
     setFunction(_function: string){
         this._function = _function
+    }
+
+    /**
+     * Mutator for grammatical case.
+     *
+     * @param grammaticalCase case to set.
+     */
+    setGrammaticalCase(grammaticalCase: string){
+        this.grammaticalCase = grammaticalCase
     }
 
     /**

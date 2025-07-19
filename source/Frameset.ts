@@ -19,7 +19,7 @@ export class Frameset {
             let argument = framesetNode.getFirstChild()
             while (argument != undefined){
                 let framesetArgument = new FramesetArgument(argument.getAttributeValue("name"),
-                    argument.getPcData(), argument.getAttributeValue("function"))
+                    argument.getPcData(), argument.getAttributeValue("function"), argument.getAttributeValue("grammaticalCase"))
                 this.framesetArguments.push(framesetArgument)
                 argument = argument.getNextSibling()
             }
@@ -50,8 +50,9 @@ export class Frameset {
      * @param type  Type of the new {@link FramesetArgument}
      * @param definition Definition of the new {@link FramesetArgument}
      * @param _function Function of the new {@link FramesetArgument}
+     * @param grammaticalCase Grammatical case of the new {@link FramesetArgument}
      */
-    addArgument(type: string, definition: string, _function: string){
+    addArgument(type: string, definition: string, _function: string, grammaticalCase: string){
         let check = false;
         for (let a of this.framesetArguments) {
             if (a.getArgumentType() == type) {
@@ -61,7 +62,7 @@ export class Frameset {
             }
         }
         if (!check) {
-            let arg = new FramesetArgument(type, definition, _function);
+            let arg = new FramesetArgument(type, definition, _function, grammaticalCase);
             this.framesetArguments.push(arg);
         }
     }

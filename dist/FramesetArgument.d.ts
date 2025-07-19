@@ -2,6 +2,7 @@ export declare class FramesetArgument {
     argumentType: string;
     _function: string;
     definition: string;
+    grammaticalCase: string;
     /**
      * A constructor of {@link FramesetArgument} class which takes argumentType and definition as input and initializes corresponding attributes
      *
@@ -9,7 +10,7 @@ export declare class FramesetArgument {
      * @param definition  Definition of the frameset argument
      * @param _function  Function of the frameset argument
      */
-    constructor(argumentType: string, definition: string, _function: string);
+    constructor(argumentType: string, definition: string, _function: string, grammaticalCase: string);
     /**
      * Accessor for argumentType.
      *
@@ -29,6 +30,12 @@ export declare class FramesetArgument {
      */
     getDefinition(): string;
     /**
+     * Accessor for grammatical case.
+     *
+     * @return grammatical case.
+     */
+    getGrammaticalCase(): string;
+    /**
      * Mutator for definition.
      *
      * @param definition to set.
@@ -40,6 +47,12 @@ export declare class FramesetArgument {
      * @param _function to set.
      */
     setFunction(_function: string): void;
+    /**
+     * Mutator for grammatical case.
+     *
+     * @param grammaticalCase case to set.
+     */
+    setGrammaticalCase(grammaticalCase: string): void;
     /**
      * toString converts an {@link FramesetArgument} to a string. It returns argument string which is in the form of
      * argumentType:definition

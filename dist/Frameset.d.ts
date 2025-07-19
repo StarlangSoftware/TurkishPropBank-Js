@@ -23,8 +23,9 @@ export declare class Frameset {
      * @param type  Type of the new {@link FramesetArgument}
      * @param definition Definition of the new {@link FramesetArgument}
      * @param _function Function of the new {@link FramesetArgument}
+     * @param grammaticalCase Grammatical case of the new {@link FramesetArgument}
      */
-    addArgument(type: string, definition: string, _function: string): void;
+    addArgument(type: string, definition: string, _function: string, grammaticalCase: string): void;
     /**
      * The deleteArgument method takes a type and a definition of a {@link FramesetArgument} as input, then it searches for the FramesetArgument with these type and
      * definition, and if it finds removes it from the framesetArguments {@link ArrayList}.

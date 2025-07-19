@@ -18,10 +18,11 @@
          * @param definition  Definition of the frameset argument
          * @param _function  Function of the frameset argument
          */
-        constructor(argumentType, definition, _function) {
+        constructor(argumentType, definition, _function, grammaticalCase) {
             this.argumentType = argumentType;
             this.definition = definition;
             this._function = _function;
+            this.grammaticalCase = grammaticalCase;
         }
         /**
          * Accessor for argumentType.
@@ -48,6 +49,14 @@
             return this.definition;
         }
         /**
+         * Accessor for grammatical case.
+         *
+         * @return grammatical case.
+         */
+        getGrammaticalCase() {
+            return this.grammaticalCase;
+        }
+        /**
          * Mutator for definition.
          *
          * @param definition to set.
@@ -62,6 +71,14 @@
          */
         setFunction(_function) {
             this._function = _function;
+        }
+        /**
+         * Mutator for grammatical case.
+         *
+         * @param grammaticalCase case to set.
+         */
+        setGrammaticalCase(grammaticalCase) {
+            this.grammaticalCase = grammaticalCase;
         }
         /**
          * toString converts an {@link FramesetArgument} to a string. It returns argument string which is in the form of

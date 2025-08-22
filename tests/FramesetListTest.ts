@@ -5,14 +5,14 @@ describe('FramesetListTest', function() {
     describe('FramesetListTest', function() {
         let framesetList = new FramesetList()
         it('testFrames', function() {
-            assert.strictEqual(17692, framesetList.size())
+            assert.strictEqual(17531, framesetList.size())
         });
         it('testArgSize', function() {
             let count = 0
             for (let i = 0; i < framesetList.size(); i++){
                 count += framesetList.getFrameSet(i).getFramesetArguments().length
             }
-            assert.strictEqual(29761, count)
+            assert.strictEqual(29473, count)
         });
         it('testCase', function() {
             let caseList = new Map()
@@ -69,13 +69,13 @@ describe('FramesetListTest', function() {
                     }
                 }
             }
-            assert.strictEqual(422, caseList.get("abl"))
-            assert.strictEqual(4690, caseList.get("acc"))
-            assert.strictEqual(2423, caseList.get("dat"))
-            assert.strictEqual(880, caseList.get("gen"))
-            assert.strictEqual(459, caseList.get("ins"))
-            assert.strictEqual(673, caseList.get("loc"))
-            assert.strictEqual(2069, caseList.get("nom"))
+            assert.strictEqual(418, caseList.get("abl"))
+            assert.strictEqual(4633, caseList.get("acc"))
+            assert.strictEqual(2402, caseList.get("dat"))
+            assert.strictEqual(870, caseList.get("gen"))
+            assert.strictEqual(451, caseList.get("ins"))
+            assert.strictEqual(666, caseList.get("loc"))
+            assert.strictEqual(2049, caseList.get("nom"))
         });
         it('testArgName', function() {
             let nameList = new Map()
@@ -88,10 +88,10 @@ describe('FramesetListTest', function() {
                     }
                 }
             }
-            assert.strictEqual(14669, nameList.get("ARG0"))
-            assert.strictEqual(13127, nameList.get("ARG1"))
-            assert.strictEqual(1886, nameList.get("ARG2"))
-            assert.strictEqual(78, nameList.get("ARG3"))
+            assert.strictEqual(14535, nameList.get("ARG0"))
+            assert.strictEqual(12996, nameList.get("ARG1"))
+            assert.strictEqual(1865, nameList.get("ARG2"))
+            assert.strictEqual(76, nameList.get("ARG3"))
             assert.strictEqual(1, nameList.get("ARG4"))
         });
         it('testArgFunction', function() {
@@ -105,17 +105,17 @@ describe('FramesetListTest', function() {
                     }
                 }
             }
-            assert.strictEqual(481, functionList.get("com"))
+            assert.strictEqual(475, functionList.get("com"))
             assert.strictEqual(14, functionList.get("ext"))
-            assert.strictEqual(814, functionList.get("loc"))
-            assert.strictEqual(198, functionList.get("rec"))
-            assert.strictEqual(14, functionList.get("pat"))
-            assert.strictEqual(10688, functionList.get("ppt"))
-            assert.strictEqual(605, functionList.get("src"))
-            assert.strictEqual(801, functionList.get("gol"))
+            assert.strictEqual(808, functionList.get("loc"))
+            assert.strictEqual(195, functionList.get("rec"))
+            assert.strictEqual(13, functionList.get("pat"))
+            assert.strictEqual(10579, functionList.get("ppt"))
+            assert.strictEqual(597, functionList.get("src"))
+            assert.strictEqual(794, functionList.get("gol"))
             assert.strictEqual(156, functionList.get("tmp"))
-            assert.strictEqual(14558, functionList.get("pag"))
-            assert.strictEqual(1432, functionList.get("dir"))
+            assert.strictEqual(14425, functionList.get("pag"))
+            assert.strictEqual(1417, functionList.get("dir"))
         });
     });
 });

@@ -1,9 +1,9 @@
 {
   "name": "nlptoolkit-propbank",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Turkish PropBank Library",
-  "main": "index.js",
-  "types": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "Mocha"
   },
@@ -24,6 +24,6 @@
     "typescript": "^4.4.4"
   },
   "dependencies": {
-    "nlptoolkit-xmlparser": "^1.0.4"
+    "nlptoolkit-xmlparser": "^1.0.6"
   }
 }

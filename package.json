@@ -1,6 +1,6 @@
 {
   "name": "nlptoolkit-propbank",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Turkish PropBank Library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -19,11 +19,12 @@
   "homepage": "https://github.com/StarlangSoftware/TurkishPropBank-Js#readme",
   "devDependencies": {
     "@types/mocha": "^9.0.0",
+    "@types/node": "^25.2.3",
     "mocha": "^9.1.3",
     "ts-node": "^10.4.0",
-    "typescript": "^4.4.4"
+    "typescript": "^5.9.3"
   },
   "dependencies": {
-    "nlptoolkit-xmlparser": "^1.0.6"
+    "nlptoolkit-xmlparser": "^1.0.7"
   }
 }
